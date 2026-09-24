@@ -1,0 +1,389 @@
+/* Style sheet for Elektro-Hoffmann
+ to WebSite of Elektro-Hoffmann
+Created by:
+AllenBerat - Consulting and Webdesign
+Hügelstr. 18
+64367 Mühltal
+Copyright: 2026 AllenBerat - Consulting and Webdesign
+Use of this code is only allowed with the written permission of AllenBerat - Consulting and Webdesign.
+*/
+
+/* Define color variables for light green, medium green, dark green, and cream */
+:root {
+  /* Grundfarbe */
+  --color-primary: #3b9171;
+
+  /* Harmonische Ergänzungen */
+  --color-dark: #1f4d40;
+  --color-light: #e5f2ed;
+}
+
+body {
+    /*background-color: white;*/
+    /*background-color: var(--farbe-creme);*/
+    background-image: url("hintergrundbild.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-blend-mode:multiply;
+    min-height: 100vh;
+}
+p {
+    font-size: 40px;
+    /*color:white;*/
+}
+h1 {
+    font-size: 45px;
+    /*color:white;*/    
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#Headbar {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 0px;
+    background-color: var(--color-light);
+    top: 0px;
+    left: 0px;
+    position: sticky;
+    z-index: 1000;
+}
+#HeadbarText {
+    container-type: inline-size;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: 20px;
+
+    font-size: 3cqw;
+    font-weight: bold;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+#Attributes {
+    container-type: inline-size;
+    font-size: 4cqw;
+    font-weight: normal;
+    margin-top: 0px;
+    color: var(--farbe-dunkelgrue)
+}
+#Hintergrundbild_landscape {
+    position: fixed;
+    left: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+#Hintergrundbild_portrait {
+    position: fixed;
+    left: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    display:none;
+}
+#Menue_Icon {
+    background-color: var(--color-primary);
+}
+.Info_container {
+    margin-left: 10px;
+    
+    align-items: flex-start;
+    
+    /* Container selbst NICHT scrollen */
+    overflow: hidden;
+    display: none;
+    overflow-wrap: anywhere;
+}
+
+.Info_container > div {
+    width: 100%;
+    
+    /* Nur der Text scrollt */
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 0px;
+    box-sizing: border-box;
+    padding-right: 32vw;
+    padding-bottom: 80px
+
+}
+
+.Side_graphic {
+    position: fixed;
+    width: 30vw;
+    height: auto;
+    right:5px;   
+    top: 30%;
+    /* Bild selbst nicht scrollen */
+    flex-shrink: 0;
+} 
+.About_container {
+    position: relative;
+}
+#Tile_Container {
+  display: flex;
+  flex-wrap: wrap;       /* Erlaubt den Umbruch auf kleinen Bildschirmen */
+  gap: 15px;
+}
+.Tile {
+    width: 18%;
+    background-color: var(--color-primary);
+    border: 2px black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    margin: 0px;
+    text-decoration: underline;
+
+}
+.Tile_graphik {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#Certificate {
+    position: absolute;
+    width: 10vw;
+    height: auto;
+    right: 30px;   
+    bottom: 0px;
+    transform: rotate(5deg);
+    box-shadow: 3px 3px 10px grey;
+}
+#Impress_Container {
+    margin-left: 10px;
+    
+    display: flex;
+    align-items: flex-start;
+    
+    /* Container selbst NICHT scrollen */
+    overflow: hidden;
+    display: none
+}
+#Hof_icon {
+    width: auto;
+    height: 160px;
+    flex: 0 0 50px;
+    object-fit: contain;
+    /*top: 0px;
+    position: fixed;*/
+    cursor: pointer;
+    border: 1px solid #050505;
+}
+#Menue_Entries {
+    margin-top: 110px;
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    background-color: var(--color-primary);
+    z-index: 100;
+    display: none;
+}
+.Menue_Elements {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
+    right: 0px;
+    cursor: pointer;
+    border: 1px solid #050505;
+    left: 0px;
+    padding:5px;
+    font-size: 40px;
+    color: white;
+}
+#Menue_Icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 1px solid #050505;
+    padding: 5px;
+    background-color: var(Menue_Icon);
+}
+#Menue_Icon hr {
+    border: none;
+    border-top: 20px solid white;
+    margin: 15px 0;
+    width: 150px;
+    color: white;
+}
+.Footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    background-color: var(--color-primary);
+    text-align: center;
+    padding: 5px;
+    z-index: 1000;
+}
+.Footer p {
+    margin: 0;
+    width: 100vw;
+    font-size: 20px;
+    color: white;
+}
+
+
+/* =========================================
+   Responsive Darstellung für Smartphones
+   ========================================= */
+
+@media (max-width: 600px) or (max-height: 600px) {
+
+    body {
+        background-size: cover;
+    }
+
+    /* Kopfzeile */
+    #Headbar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 0px;
+    background-color: var(--color-light);
+    top: 0px;
+    left: 0px;
+    position: sticky;
+    z-index: 1000;
+    }
+
+    #Hof_icon {
+        height: 70px;
+        flex: 0 0 70px;
+    }
+
+    #HeadbarText {
+        margin-left: 10px;
+        flex: 1 1 auto;
+        font-size: 16px;
+        line-height: 1.1;
+    }
+
+    #Attributes {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    /* Menü */
+    #Menue_Icon {
+        margin-right: 5px;
+        padding: 3px;
+        display: none
+    }
+
+    #Menue_Icon hr {
+        border-top: 8px solid #050505;
+        margin: 5px 0;
+        width: 40px;
+    }
+    #Menue_Entries {
+        top: 80px;
+        margin-top: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .Menue_Elements {
+        justify-content: flex-end;
+        font-size: 20px;
+        padding: 10px;
+    }
+    #Hintergrundbild_landscape {
+        display: none;
+    }
+
+    #Hintergrundbild_portrait {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    /* Inhaltsbereiche */
+    .Info_container {
+        margin-left: 10px;
+        margin-right: 10px;
+        display: block; 
+        overflow: hidden;
+    }
+
+    .Info_container > div {
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 0vw;
+}
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 19px;
+        line-height: 1.4;
+    }
+    #Impress_Container {
+        margin-left: 10px;
+        
+        display: flex;
+        align-items: flex-start;
+        
+        /* Container selbst NICHT scrollen */
+        overflow: hidden;
+        display: block;
+    }
+    #Tile_Container {
+    display: none !important;
+    }
+
+    /* Bilder, die auf dem PC rechts stehen */
+    .Side_graphic {
+        position: relative;
+        width: 80%;
+        height: auto;
+        right: auto;
+        top: auto;
+        margin: 20px auto;
+        display: block;
+    }
+
+    /* Zertifikat */
+    #Certificate {
+        position: relative;
+        width: 30vw;
+        right: auto;
+        bottom: auto;
+        margin: 20px auto;
+        display: block;
+    }
+    .Footer p {
+    margin: 0;
+    width: 100vw;
+    font-size: 12px;
+    color: white;
+}
+
+
+}

@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+```
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Vorschläge Web-Seite Hoffmann</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        background-color: white;
+    }
+
+    /* Überschrift */
+    h1 {
+        position: absolute;
+        top: 3vh;
+        left: 0;
+        width: 100%;
+
+        margin: 0;
+        text-align: center;
+
+        font-size: clamp(24px, 4vw, 42px);
+    }
+
+    /* Bereich für die beiden Tasten */
+    #ButtonContainer {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        flex-direction: row;
+        gap: 5vw;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Tasten */
+    .HoffmannButton {
+        width: 30vw;
+        height: 20vh;
+
+        padding: 1vh 1vw;
+
+        background-color: orange;
+        border: 2px solid black;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+
+        text-decoration: none;
+        color: black;
+
+        font-size: clamp(14px, 2vw, 24px);
+        font-weight: bold;
+
+        position: relative;
+    }
+
+    .HoffmannButton:hover {
+        background-color: #ffb52e;
+    }
+
+    /* Bilder */
+    .HoffmannButton img {
+        max-width: 65%;
+        max-height: 55%;
+
+        object-fit: contain;
+
+        display: block;
+
+        margin-bottom: 1vh;
+    }
+
+    /* Text unter dem Bild */
+    .ButtonText {
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    /*
+     * Feuerwerksrakete
+     */
+.rocket {
+    position: fixed;
+
+    width: 12px;
+    height: 35px;
+
+    background-color: black;
+
+    border-radius: 50% 50% 20% 20%;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation: rocketFlight 2s linear forwards;
+}
+
+.rocket::after {
+    content: "";
+
+    position: absolute;
+
+    left: 3px;
+    bottom: -25px;
+
+    width: 6px;
+    height: 25px;
+
+    background-color: red;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 8px 0 orange,
+        0 16px 0 yellow;
+}
+
+@keyframes rocketFlight {
+
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -30vh);
+        opacity: 1;
+    }
+}
+    /* Flug der Rakete */
+@keyframes rocketFlight {
+
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translate(-50%, -30vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -30vh);
+        opacity: 0;
+    }
+}
+    .firework-particle {
+    position: fixed;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    z-index: 2000;
+
+    pointer-events: none;
+
+    animation: particleFlight 0.9s ease-out forwards;
+}
+
+@keyframes particleFlight {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(var(--dx), var(--dy))
+            scale(0.2);
+        opacity: 0;
+    }
+}
+
+    /*
+     * Feuerwerks-Explosion
+     */
+
+.explosion {
+    position: fixed;
+
+    width: 30px;
+    height: 30px;
+
+    margin-left: -15px;
+    margin-top: -15px;
+
+    background-color: yellow;
+
+    border-radius: 50%;
+
+    z-index: 99999;
+
+    pointer-events: none;
+
+    animation: explosionAnimation 1s ease-out forwards;
+}
+
+@keyframes explosionAnimation {
+
+    0% {
+        transform: scale(0.2);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(4);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(8);
+        opacity: 0;
+    }
+}     /*
+     * Anpassung für schmale Bildschirme
+     */
+    @media (max-width: 600px) {
+
+        #ButtonContainer {
+            gap: 3vw;
+        }
+
+        .HoffmannButton {
+            width: 46vw;
+            height: 20vh;
+        }
+
+        .HoffmannButton img {
+            max-width: 60%;
+            max-height: 50%;
+        }
+
+        h1 {
+            font-size: 7vw;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<h1>Vorschläge Web-Seite Hoffmann</h1>
+
+
+<div id="ButtonContainer">
+
+    <!-- Immobilienverwaltung -->
+    <div class="HoffmannButton"
+         onclick="startFirework(this, 'ger.html')">
+
+        <img src="Hoffmann Icon.jpg"
+             alt="Hoffmann Immobilienverwaltung">
+
+        <div class="ButtonText">
+            Immobilienverwaltung Hoffmann
+        </div>
+
+    </div>
+
+
+    <!-- Elektro-Hoffmann -->
+    <div class="HoffmannButton"
+         onclick="startFirework(this, 'chr.html')">
+
+        <img src="Icon_Chr_Hoffmann.jpg"
+             alt="Elektro-Hoffmann">
+
+        <div class="ButtonText">
+            Elektro-Hoffmann
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function startFirework(button, targetPage) {
+
+    /* Mehrfaches Klicken verhindern */
+    if (button.dataset.clicked === "true") {
+        return;
+    }
+
+    button.dataset.clicked = "true";
+
+
+    /* Position der Taste */
+    const rect = button.getBoundingClientRect();
+
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+
+    /* =========================
+       RAKETE
+       ========================= */
+
+    const rocket = document.createElement("div");
+
+    rocket.className = "rocket";
+
+    rocket.style.left = x + "px";
+    rocket.style.top = y + "px";
+
+    document.body.appendChild(rocket);
+
+
+    /* =========================
+       FEUERWERK NACH 2 SEKUNDEN
+       ========================= */
+
+    setTimeout(function () {
+
+        /*
+         * Position des oberen Endes
+         * der Raketenflugbahn
+         */
+        const explosionX = x;
+        const explosionY =
+            y - window.innerHeight * 0.30;
+
+
+        /*
+         * 32 Partikel erzeugen
+         */
+        const colors = [
+            "red",
+            "orange",
+            "yellow",
+            "lime",
+            "cyan",
+            "blue",
+            "violet",
+            "magenta"
+        ];
+
+        const numberOfParticles = 32;
+
+
+        for (let i = 0; i < numberOfParticles; i++) {
+
+            const particle =
+                document.createElement("div");
+
+            particle.className =
+                "firework-particle";
+
+
+            /* Farbe */
+            particle.style.backgroundColor =
+                colors[i % colors.length];
+
+
+            /* Ausgangspunkt */
+            particle.style.left =
+                explosionX + "px";
+
+            particle.style.top =
+                explosionY + "px";
+
+
+            /*
+             * Winkel berechnen
+             */
+            const angle =
+                (2 * Math.PI * i) /
+                numberOfParticles;
+
+
+            /*
+             * Flugweite
+             */
+            const distance =
+                50 + Math.random() * 70;
+
+
+            /*
+             * Endposition
+             */
+            const dx =
+                Math.cos(angle) * distance;
+
+            const dy =
+                Math.sin(angle) * distance;
+
+
+            particle.style.setProperty(
+                "--dx",
+                dx + "px"
+            );
+
+            particle.style.setProperty(
+                "--dy",
+                dy + "px"
+            );
+
+
+            document.body.appendChild(particle);
+
+
+            /*
+             * Partikel wieder entfernen
+             */
+            setTimeout(function () {
+                particle.remove();
+            }, 1000);
+        }
+
+    }, 2000);
+
+
+    /* =========================
+       NACH 3 SEKUNDEN WEITERLEITEN
+       ========================= */
+
+    setTimeout(function () {
+
+        window.location.href = targetPage;
+
+    }, 3000);
+
+}
+setTimeout(function () {
+
+    const explosion = document.createElement("div");
+
+    explosion.className = "explosion";
+
+    explosion.style.left = x + "px";
+    explosion.style.top =
+        (y - window.innerHeight * 0.30) + "px";
+
+    document.body.appendChild(explosion);
+
+}, 2000);
+
+</script>
+```
+
+</body>
+</html>

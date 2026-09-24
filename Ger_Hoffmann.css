@@ -1,0 +1,373 @@
+/* Style sheet for Hoffmann Immobilien */
+/* to WebSite of Immobilien - Verwaltung Hoffmann
+Created by:
+AllenBerat - Consulting and Webdesign
+Hügelstr. 18
+64367 Mühltal
+Copyright: 2026 AllenBerat - Consulting and Webdesign
+Use of this code is only allowed with the written permission of AllenBerat - Consulting and Webdesign.
+*/
+/* Define color variables for light green, medium green, dark green, and cream */
+:root {
+    --farbe-hellgruen: #D9F5D5;
+    --farbe-mittelgruen: #8BCF8B;
+    --farbe-dunkelgruen: #3F704D;
+    --farbe-creme: #F7FAF5;
+}
+/*body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.4);
+    z-index: 0;
+    pointer-events: none;*/
+}
+
+body {
+    /*background-color: white;*/
+    /*background-color: var(--farbe-creme);*/
+    background-image: url("hintergrundbild.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-blend-mode:multiply;
+    min-height: 100vh;
+}
+p {
+    font-size: 40px;
+    color:white;
+}
+h1 {
+    font-size: 45px;
+    color:white;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#Headbar {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px;
+    background-color: var(--farbe-hellgruen);
+    top: 0px;
+    left: 0px;
+    position: sticky;
+    z-index: 1000;
+}
+#HeadbarText {
+    container-type: inline-size;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: 20px;
+    font-size: 4cqw;
+    font-weight: bold;
+    white-space: normal;
+    overflow-wrap: break-word;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#Header {
+    container-type: inline-size;
+    font-size: min(4cqw, 4cqh);
+    font-weight: bold;
+    margin: 0px;
+    color: black;
+    padding:0%;
+}
+#Attributes {
+    container-type: inline-size;
+    font-size: min(2cqw, 4cqh);
+    font-weight: normal;
+    margin: 0px;
+    color: black;
+    padding:0%;
+}
+#Hof_icon {
+    height: 100%;
+    width: auto;
+    /*flex: 0 0 50px;*/
+    flex: 0 0 auto;
+    object-fit: contain;
+    margin-top: 0px;
+    cursor: pointer;
+}
+#Hintergrundbild_landscape {
+    position: fixed;
+    left: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+#Hintergrundbild_portrait {
+    position: fixed;
+    left: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    display:none;
+}
+
+.Info_container {
+    margin-left: 10px;
+    align-items: flex-start;
+    
+    /* Container selbst NICHT scrollen */
+    overflow: hidden;
+    display: none;
+    overflow-wrap: anywhere;
+}
+
+.Info_container > div {
+    width: 100%;
+    
+    /* Nur der Text scrollt */
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 0px;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+    padding-right: 32vw;
+}
+
+.Side_graphic {
+    position: fixed;
+    width: 30vw;
+    height: auto;
+    right:5px;   
+    top: 20%;
+    /* Bild selbst nicht scrollen */
+    flex-shrink: 0;
+} 
+.About_container {
+    position: relative;
+}
+#Certificate {
+    position: absolute;
+    width: 10vw;
+    height: auto;
+    right: 37vw;   
+    bottom: 0vh;
+    transform: rotate(5deg);
+    box-shadow: 3px 3px 10px grey;
+}
+#Impress_Container {
+    margin-left: 10px;
+    
+    display: flex;
+    align-items: flex-start;
+    
+    /* Container selbst NICHT scrollen */
+    overflow: hidden;
+    display: none
+}
+
+#Menue_Entries {
+    margin-top: 15vh;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: #cdcfce;
+    z-index: 100;
+    display: none;
+}
+.Menue_Elements {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
+    right: 0px;
+    cursor: pointer;
+    border: 1px solid #050505;
+    left: 0px;
+    padding:5px;
+    font-size: 40px;
+}
+#Menue_Icon {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 0px;
+    border: 1px solid #050505;
+    padding: 0px;
+    background-color: #cdcfce;
+}
+#Menue_Icon hr {
+    border: none;
+    border-top: 20px solid #050505;
+    margin: 10px 0;
+    width: 150px;
+}
+.Footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    background-color: var(--farbe-hellgruen);
+    text-align: center;
+    padding: 5px;
+    z-index: 1000;
+    /*box-sizing: border-box;*/
+}
+.Footer p {
+    margin: 0;
+    width: 100vw;
+    font-size: 20px;
+    color: black;
+}
+
+/* =========================================
+   Responsive Darstellung für Smartphones
+   ========================================= */
+
+@media (max-width: 600px) or (max-height: 600px) {
+
+    body {
+        background-size: cover;
+    }
+
+    /* Kopfzeile */
+    #Headbar {
+        height: 10vh;
+        /*min-height: 80px;*/
+        z-index: 1000;
+    }
+
+    #Hof_icon {
+        height: 100%;
+        flex: 0 0 70px;
+    }
+    #Header {
+        container-type: inline-size;
+        font-size: min(4cqw, 5cqh);
+        font-weight: bold;
+        margin: 0px;
+        color: black;
+    }
+
+    #HeadbarText {
+        container-type: inline-size;
+        margin-left: 10px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: min(3cqw, 4cqh);
+        line-height: 1.1;
+    }
+
+    #Attributes {
+        font-size: min(4cqw, 4cqh);
+        margin-top: 5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+}
+
+    /* Menü */
+    #Menue_Icon {
+        margin-right: 5px;
+        padding: 3px;
+        display: none
+    }
+
+    #Menue_Icon hr {
+        border-top: 8px solid #050505;
+        margin: 5px 0;
+        width: 40px;
+    }
+    #Menue_Entries {
+        top: 80px;
+        margin-top: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .Menue_Elements {
+        justify-content: flex-end;
+        font-size: 20px;
+        padding: 10px;
+    }
+ #Hintergrundbild_landscape {
+        display: none;
+    }
+
+    #Hintergrundbild_portrait {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    /* Inhaltsbereiche */
+    .Info_container {
+        margin-left: 10px;
+        margin-right: 10px;
+        display: block; 
+        overflow: hidden;
+    }
+
+    .Info_container > div {
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        padding-right: 0vw;
+
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 19px;
+        line-height: 1.4;
+    }
+#Impress_Container {
+    margin-left: 10px;
+    
+    display: flex;
+    align-items: flex-start;
+    
+    /* Container selbst NICHT scrollen */
+    overflow: hidden;
+    display: block;
+}
+
+    /* Bilder, die auf dem PC rechts stehen */
+    .Side_graphic {
+        position: relative;
+        width: 80%;
+        height: auto;
+        right: auto;
+        top: auto;
+        margin: 20px auto;
+        display: block;
+    }
+
+    /* Zertifikat */
+    #Certificate {
+        position: relative;
+        width: 30vw;
+        right: auto;
+        bottom: auto;
+        margin: 20px auto;
+        display: block;
+    }
+    .Footer p {
+        font-size: 14px;
+    }
+
+}
